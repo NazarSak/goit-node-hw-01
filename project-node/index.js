@@ -8,8 +8,8 @@ program
   .option("-e, --email <type>", "user email")
   .option("-p, --phone <type>", "user phone");
 
-  program.parse(process.argv);
-  const argv = program.opts();
+program.parse();
+const argv = program.opts();
 // console.log(__dirname);
 
 const contactAction = async ({ action, id, name, email, phone }) => {
@@ -35,15 +35,4 @@ const contactAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-
-contactAction(argv)
-
-// contactAction({ action: "list" });
-// contactAction({ action: "get", id: "05olLMgyVQdWRwgKfg5J6" });
-// contactAction({
-//   action:"add",
-//   name: "Nazar",
-//   email: "nazar.ante@vestibul.co.uk",
-//   phone: "(414) 820-6885",
-// });
-// contactAction({ action: "remove", id: "rsKkOQUi80UsgVPCcLZZW" });
+contactAction(argv);
